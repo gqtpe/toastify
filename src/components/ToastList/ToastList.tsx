@@ -7,10 +7,10 @@ export interface IToast {
     message: string;
     type: 'success' | 'failure' | 'warning'
 }
-
+export type Position = 'top--left' | 'top--right' | 'bottom-left' | 'bottom-right'
 type Props = {
     data: IToast[]
-    position: 'top--left' | 'top--right' | 'bottom-left' | 'bottom-right'
+    position: Position
     removeToast: (toastID: number) => void
 }
 const ToastList: FC<Props> = ({data, position, removeToast}) => {

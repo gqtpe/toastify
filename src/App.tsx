@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ToastList, {IToast} from "./components/ToastList/ToastList";
+import ToastList, {IToast, Position} from "./components/ToastList/ToastList";
 import "./App.css";
 import {failureMsgs, randomMsg, successMsgs, warningMsgs} from "./toastMessages.ts";
 
@@ -7,9 +7,9 @@ const App = () => {
     const [toasts, setToasts] = useState<IToast[]>([]);
     const [autoClose, setAutoClose] = useState(true);
     const [autoCloseDuration, setAutoCloseDuration] = useState(5);
-    const [position, setPosition] = useState("bottom-right");
+    const [position, setPosition] = useState<Position>("bottom-right");
 
-    const positions = {
+    const positions: any = {
         "top-right": "Top-right",
         "top-left": "Top-left",
         "bottom-right": "Bottom-right",
